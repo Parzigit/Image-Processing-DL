@@ -3,10 +3,13 @@
 
 Creating a Sequential CNN model to classify images of various datasets and comparing the results to that of an svm model(image classification) with k-means clustering(image clustering).
 **Final Results:**
+
 Using **SVM & k-Means**
+
 ![image](https://github.com/Parzigit/Image-Processing-DL/assets/127716273/5b3fc435-a33f-4141-9beb-96e49243d09b)
 
 Using **Seq-CNN**
+
 ![image](https://github.com/Parzigit/Image-Processing-DL/assets/127716273/ce5dc34f-6899-4f09-ad74-1df65f33baa2)
 
 
