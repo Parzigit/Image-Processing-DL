@@ -1,0 +1,73 @@
+***Image PreProcessing:::
+
+We need to ensure efficient analysis of our dataset taken.
+So a process is employed (4-steps involved), comprising of image pre-processing, feature extraction, classification, and the final output. In image pre-processing, we eliminate undesirable distortions. We can achieve this by resizing the images, noise removal, separating BGR channels and greyscale conversion, on both datasets. Feature extraction transforms raw image data into numerical properties, through k-means. And svm does the classification on either sides of the plane. Through this we ensure optimal training and testing.
+
+
+BGR to GBR conversion:
+
+In some scenarios we need to rearrange the color channels for specific purposes.
+
+One reason can for converting from BGR to GBR may be because we need to match the color channel order expected by other libraries or maybe some algorithms or processing techniques require a specific color channel order for optimal performance.
+
+Removing noise from images is crucial as the clarity of the image is improved, allowing for better feature extraction.
+
+By separating the image into its constituent BGR channels, we can analyze and process each channel independently to remove noise or perform any enhancements.***
+
+why sequential cnn model??
+***Since each layer connects only to the previous and following layers, we refer to this conventional CNN as a "sequential CNN model"
+It is a very simple and straight forward architecture, where we arrange the layers one after another in an orderly manner but it is limited to single-input, single-output stacks of layers
+
+ 
+Accuracy: how many of our predictions are right?
+Precision: Out of all mature predictions how many are right?
+Recall: Out of all mature truth how many are right?
+
+
+***Layers
+Conv2D (Convolutional Layer):
+This layer is like a filter that looks at small portions of the image at a time.
+It has 32 filters, each looking at different parts of the image.
+The output shape after this layer is (148, 148, 32), meaning the image is now broken down into smaller pieces, each with 32 different features.
+
+MaxPooling2D (Pooling Layer):
+This layer reduces the size of the image by taking the maximum value from each group of pixels.
+It helps in reducing the computational load and the number of parameters.
+After this layer, the image size is halved, so the output shape becomes (74, 74, 32).
+
+Flatten (Flattening Layer):
+This layer converts the 3D data into a 1D array.
+It's like taking all the pixels and putting them in a single line.
+The output shape becomes (36992), which means there are 36992 values in a single line.***
+
+
+loss fucntion??
+A loss function measures how well the model's predictions match the actual target values (labels) in the training data****
+
+
+ReLU's simplicity (output equals input for positive values, zero for negative values) makes it computationally efficient, compared to more complex activation functions.
+Relu behaves close to a linear unit
+Relu is like a switch for linearity. If you don't need it, you "switch" it off. If you need it, you "switch" it on. Thus, we get the linearity benefits but reserve ourself an option of not using it altogther.
+The derivative is 1 when it's active. The second derivative of the function is 0 almost everywhere. Thus, it's a very simple function. That makes optimisation much easier.
+The gradient is large whenever you want it be and never saturate
+
+***why relu???
+ReLU sets negative values to zero and passes positive values unchanged. This property helps mitigate the vanishing gradient problem and accelerates training by introducing non-linearity without saturating gradients.****
+
+
+
+
+The Sigmoid function is used to add non-linearity in a machine learning model. Basically, the function determines which value to pass as output and what not to***
+
+RELU_USED IN HIDDENLAYERS
+SIGMOID/SOFTMAX_USED IN OUTPUT
+
+sigomid outputs 0 on negative infinity and 1 on positive infinity
+
+
+
+*****why sigmoid?
+he sigmoid function squashes its input values between 0 and 1. This property makes it suitable for binary classification tasks, where the output represents the probability of belonging to one of the two classes****
+The sigmoid function has a smooth and well-defined gradient, making it suitable for gradient-based optimization algorithms like gradient descent. This smoothness facilitates stable and efficient training of neural networks.******
+
+
